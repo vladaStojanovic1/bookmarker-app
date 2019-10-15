@@ -54,6 +54,7 @@ function deleteBookmark(url) {
     localStorage.setItem('bookmars', JSON.stringify(bookmars));
     // Re-fetch bookmars
     fetchBookmars();
+
 }
 
 
@@ -70,11 +71,10 @@ function fetchBookmars() {
         let url = bookmark.url;
 
         bookmarksResults.innerHTML += `
-        <div class='card card-body bg-light text-center w-50 m-auto'>
-            <h3>${name}
-                <a href=${url} class='btn btn-primary' target='_blank'> Visit</a>
-                <a href='#' onClick=deleteBookmark(\'${url}\')  class='btn btn-danger'>X</a>
-            </h3>
+        <div class='card card-body bg-light text-center w-50 m-auto animated flipInX'>
+            <h3 class=''>${name}</h3>
+                <a href=${url} target='_blank'><i class="far fa-eye fa-2x see"></i></a>
+                <a href='#' <i onClick=deleteBookmark(\'${url}\') class="fas fa-trash-alt fa-2x delete "></i></a>
         </div>
         `
     })
@@ -92,6 +92,9 @@ function validateForm(siteUrl, siteName) {
     if (!siteUrl.match(regex)) {
         alert('Please use a valid URL');
         return false;
+
     }
     return true;
+
 }
+

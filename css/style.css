@@ -1,8 +1,42 @@
-/* footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-} */
-.title{
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap');.title{
     font-size: 55px;
+}
+.form-control {
+    border-radius: 10px;
+}
+.card{
+    border-radius: 10px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    margin-bottom: 15px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7px;
+}
+.btn{
+    border-radius: 10px;
+    border: none;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+.title{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color: rgb(82, 80, 80);
+}
+label{
+    color: rgb(82, 80, 80);
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+footer p{
+    font-family: 'Alegreya Sans SC', sans-serif;
+    color: rgb(82, 80, 80);
+}
+
+.delete{
+    color: rgb(255, 2, 2);
+}
+.delete:hover{
+    color: black;
+}
+.see{
+    color:#17a2b8;
 }

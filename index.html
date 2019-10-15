@@ -7,6 +7,11 @@
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
     <title>Bookmaker</title>
@@ -16,7 +21,7 @@
     <main role="main">
         <div class="jumbotron">
             <div class="container text-center">
-                <h2 class="display-3 text-center title">Bookmark Your Favorite Sites</h2>
+                <h2 class="display-3 text-center title animated lightSpeedIn">Bookmark Your Favorite Sites</h2>
                 <hr class="mb-5">
                 <form id="myForm">
                     <div class="form-group text-center ">
@@ -27,7 +32,7 @@
                         <label class="font-weight-bold">Site URL</label>
                         <input type="text" id="siteUrl" class="form-control w-50 m-auto" placeholder="Website URL">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button id="submitBtn" type="submit" class="btn btn-info ">Submit</button>
                 </form>
             </div>
         </div>
