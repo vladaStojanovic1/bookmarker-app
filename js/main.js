@@ -7,11 +7,14 @@ function saveBookmark(e) {
     let siteName = document.getElementById('siteName').value;
     let siteUrl = document.getElementById('siteUrl').value;
 
+    if (!validateForm(siteUrl, siteName)) {
+        return false;
+    }
+
     let bookmark = {
         name: siteName,
         url: siteUrl
     }
-
     // Test if bookmars is null
     if (localStorage.getItem('bookmars') === null) {
         // Init array        
@@ -29,10 +32,11 @@ function saveBookmark(e) {
         // Re-set back to LocalStorage
         localStorage.setItem('bookmars', JSON.stringify(bookmars));
     }
-
+    // Clear form
+    document.getElementById('myForm').reset();
     // Re-fetch bookmars
     fetchBookmars();
-
+    //Prevent form from submitting
     e.preventDefault();
 }
 
@@ -40,18 +44,14 @@ function saveBookmark(e) {
 function deleteBookmark(url) {
     // Get bookmarks from localStorage
     let bookmars = JSON.parse(localStorage.getItem('bookmars'));
-    console.log(bookmars);
-
     // Loop throught bookmarks
     bookmars.forEach((bookmark) => {
-
         if (bookmark.url == url) {
             bookmars.splice(bookmars, 1);
         }
     })
     // Re-set back to LocalStorage
     localStorage.setItem('bookmars', JSON.stringify(bookmars));
-
     // Re-fetch bookmars
     fetchBookmars();
 }
@@ -78,4 +78,20 @@ function fetchBookmars() {
         </div>
         `
     })
+}
+
+// Validate form
+function validateForm(siteUrl, siteName) {
+    if (!siteName || !siteUrl) {
+        alert('Please fill in the form');
+        return false;
+    }
+    let expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    let regex = new RegExp(expression);
+
+    if (!siteUrl.match(regex)) {
+        alert('Please use a valid URL');
+        return false;
+    }
+    return true;
 }
