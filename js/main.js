@@ -74,7 +74,7 @@ function fetchBookmars() {
         <div class='card card-body bg-light text-center w-50 m-auto animated flipInX'>
             <h3 class=''>${name}</h3>
                 <a href=${url} target='_blank'><i class="far fa-eye fa-2x see"></i></a>
-                <a href='#' <i onClick=deleteBookmark(\'${url}\') class="fas fa-trash-alt fa-2x delete "></i></a>
+                <a href='#'><i onClick=deleteBookmark(\'${url}\') class="fas fa-trash-alt fa-2x delete"></i></a>
         </div>
         `
     })
